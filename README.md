@@ -14,3 +14,20 @@ Remember, it's self-paced so feel free to take a break! ☕️
 
 &copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
 
+## Security
+
+- Do not store plaintext passwords or secrets in the repository.
+- Provide a `SECRET_KEY` through environment variables (e.g. in a local `.env`, which is gitignored).
+
+Utilities included:
+
+- `scripts/hash_password.py <password>` — prints a bcrypt hash suitable for storing in a credentials file.
+- `scripts/rotate_secret.py [--write-dotenv]` — generates a new `SECRET_KEY` and optionally writes it to `.env`.
+
+Install the added dependency before using the scripts:
+
+```bash
+pip install -r requirements.txt
+```
+
+
